@@ -4,14 +4,14 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: ms-productos
-          uri: lb://ms-productos
+        - id: ms-participantes
+          uri: lb://ms-participantes
           predicates:
             - Path=/api1/**
           filters:
             - StripPrefix=1
-        - id: ms-deseos
-          uri: lb://ms-deseos
+        - id: ms-eventos
+          uri: lb://ms-eventos
           predicates:
             - Path=/api2/**
           filters:
