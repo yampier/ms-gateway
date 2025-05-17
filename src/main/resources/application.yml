@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: ms-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: ms-productos
+          uri: lb://ms-productos
+          predicates:
+            - Path=/api1/**
+          filters:
+            - StripPrefix=1
+        - id: ms-deseos
+          uri: lb://ms-deseos
+          predicates:
+            - Path=/api2/**
+          filters:
+            - StripPrefix=1
+server:
+  port: 9099
