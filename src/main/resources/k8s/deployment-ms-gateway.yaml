@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-gateway
+  labels:
+    app: ms-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-gateway
+  template:
+    metadata:
+      labels:
+        app: ms-gateway
+    spec:
+      containers:
+        - name: ms-gateway
+          image: jean1988/ms-gateway:1.1
+          ports:
+            - containerPort: 9099

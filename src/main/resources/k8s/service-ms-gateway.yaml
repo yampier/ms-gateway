@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-gateway-service
+  labels:
+    app: ms-gateway
+spec:
+  type: LoadBalancer
+  selector:
+    app: ms-gateway
+  ports:
+    - protocol: TCP
+      port: 9099
+      targetPort: 9099
